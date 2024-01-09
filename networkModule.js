@@ -1,4 +1,4 @@
-import os from 'node:os';
+/*import os from 'node:os';
 
 function netInfo() {
   const interfaces = os.networkInterfaces();
@@ -18,4 +18,22 @@ function netInfo() {
   return results;
 }
 
-export { netInfo };
+export { netInfo };*/
+const os = require('node:os');
+
+function getInfoNetwork() {
+  const networkInterfaces = os.networkInterfaces();
+  const redes = {};
+
+  Object.keys(networkInterfaces).forEach(dato => {
+    redes[dato] = networkInterfaces[dato].map(interface => ({
+      Familia: interface.family,
+      Direccion: interface.address,
+      Interno: interface.internal
+    }));
+  });
+
+  return redes;
+}
+
+console.log(getInfoNetwork());

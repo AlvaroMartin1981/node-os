@@ -1,4 +1,4 @@
-import {systemInfo} from './osModule.mjs';
+/*import {systemInfo} from './osModule.mjs';
 import {netInfo} from './networkModule.mjs';
 
 
@@ -12,12 +12,16 @@ infoNetwork.forEach(interfaz => {
   });
   console.log('\n');
 });
-
-
-
-
 const systemInformation = systemInfo();
 console.log(systemInformation);
 
 const networkInformation = netInfo();
 console.log(networkInformation);
+
+*/
+
+const getInfoSystem = require('./osModule.js')
+console.log(getInfoSystem());
+const getInfoNetwork = require('./networkModule.js')
+console.log(getInfoNetwork());
+
